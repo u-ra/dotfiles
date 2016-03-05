@@ -1,0 +1,11 @@
+[user]
+	email = u.ra604@gmail.com
+	name = Jurica Vukadin
+[push]
+	default = simple
+[review "review.cyanogenmod.org"]
+	username = u-ra
+[merge]
+	tool = vimdiff
+[color]
+	ui = auto

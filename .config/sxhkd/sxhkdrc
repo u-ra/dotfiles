@@ -1,0 +1,78 @@
+#
+# bspwm hotkeys
+#
+
+# Exit BSPWM
+alt +shift + e
+    pkill conky; pkill panel; pkill bspwm-bar; bspc quit
+
+# Close current window
+alt + shift + q
+    bspc window -c
+
+# Cycle desktop layouts tiled | monocle (fullscreen)
+alt + t
+    bspc desktop -l next
+
+# Balance desktop
+alt + b
+    bspc desktop -B
+
+# Toggle floating
+alt + shift + {space,f}
+    bspc window -t {floating,fullscreen}
+
+# Rotate windows 90 degrees
+alt + Tab
+    bspc desktop -R 90
+
+# Move window into a presel
+alt + grave
+    bspc window -w last.manual
+
+# Swap current window with the biggest
+alt + m
+    bspc window -s biggest
+
+# Focus/Move around
+alt + {_,shift + }{Left,Down,Up,Right}
+    bspc window -{f,s} {left,down,up,right}
+
+# Create a presel
+alt + ctrl + {Left,Down,Up,Right}
+    bspc window -p {left,down,up,right}
+
+# Go to desktop / Move to desktop
+alt + {_,shift + }{1-9,0}
+    bspc {desktop -f,window -d} ^{1-9,10}
+
+~button1
+    bspc pointer -g focus
+
+alt + button{1-3}
+    bspc pointer -g {move,resize_side,resize_corner}
+
+alt + !button{1-3}
+    bspc pointer -t %i %i
+
+alt + @button{1-3}
+    bspc pointer -u
+
+#
+# wm independent hotkeys
+#
+alt + Return
+    termite
+
+shift + Print
+    scrot
+
+super + m
+    amixer set Master toggle
+
+alt + d
+    rofi -bg '#272822' -hlbg '#0087af' -bc '#0087af' -bw 2 -fg '#f8f8f2' -hlfg '#FFFFFF' -font 'envypn 13' -width 15 -terminal termite -show run -pid /tmp/rofi.pid
+
+# make sxhkd reload its configuration files:
+alt + Escape
+    pkill -USR1 -x sxhkd
