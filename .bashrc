@@ -1,5 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+[[ -z $DISPLAY && "$XDG_VTNR" == "1" ]] && exec startx
 
 export CCACHE_BASEDIR=/home/jura
 export CCACHE_DIR=/scratch/ccache
