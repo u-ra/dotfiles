@@ -8,7 +8,7 @@ alt +shift + e
 
 # Close current window
 alt + shift + q
-    bspc window -c
+    bspc node -c
 
 # Cycle desktop layouts tiled | monocle (fullscreen)
 alt + t
@@ -16,35 +16,44 @@ alt + t
 
 # Balance desktop
 alt + b
-    bspc desktop -B
+    bspc node @focused:/ -B
 
 # Toggle floating
-alt + shift + {space,f}
-    bspc window -t {floating,fullscreen}
+alt + shift + space
+    bspc node -t ~floating
 
 # Rotate windows 90 degrees
 alt + Tab
-    bspc desktop -R 90
+    bspc node @focused:/ -R 90
 
 # Move window into a presel
 alt + grave
-    bspc window -w last.manual
+    bspc node -n last.!automatic
 
 # Swap current window with the biggest
 alt + m
-    bspc window -s biggest
+    bspc node -s biggest
 
 # Focus/Move around
 alt + {_,shift + }{Left,Down,Up,Right}
-    bspc window -{f,s} {left,down,up,right}
+    bspc node -{f,s} {west,south,north,east}
 
 # Create a presel
 alt + ctrl + {Left,Down,Up,Right}
-    bspc window -p {left,down,up,right}
+    dir={west,south,north,east}; \
+    cur=$(bspc query -T -n focused.!automatic | jshon -e presel -e splitDir -u 2>&-); \
+    [ "$dir" = "$cur" ] && dir=cancel; \
+    bspc node -p "$dir"
 
-# Go to desktop / Move to desktop
-alt + {_,shift + }{1-9,0}
-    bspc {desktop -f,window -d} ^{1-9,10}
+# Go to desktop
+alt + {1-9,0}
+    item="^{1-9,10}"; \
+    bspc query --desktops --desktop "$\{item\}.focused" > /dev/null && item=last; \
+    bspc desktop -f "$item"
+
+# Move to desktop
+alt + shift + {1-9,0}
+    bspc node -d {1-9,0}
 
 ~button1
     bspc pointer -g focus
