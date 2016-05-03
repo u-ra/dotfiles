@@ -85,6 +85,11 @@ let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_max_height = 30
 let g:ctrlp_max_files = 0
 
+" YouCompleteMe
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
 " Airline
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
