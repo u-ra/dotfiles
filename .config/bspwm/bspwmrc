@@ -15,8 +15,17 @@ bspc config focused_border_color	'#b8bb26'
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
-~/bin/bspwm-bar | lemonbar -g 500x15 -u 0 -f 'envypn:size=6' | sh &
-xtitle -s -f "%%{r}%%{F#ff303030}%%{F-}%%{B#ff303030}%%{F#ff9e9e9e}%s%%{B-}%%{F-}" | lemonbar -g 1374x15+500 -u 0 -f 'envypn:size=6' &
+half_res=$(($(xrandr | head -1 | awk '{print $8}')/2))
+height=16
+font="Fantasque Sans Mono:size=11"
+
+~/bin/bbar | lemonbar -g ${half_res}x${height} -u 0 -f "$font" | sh &
+
+title_fg="#ff282828"
+title_bg="#ffba8baf"
+
+xtitle -s -f "%%{r}%%{F${title_bg}}%%{F-}%%{B${title_bg}}%%{F${title_fg}}%s%%{B-}%%{F-}" | \
+lemonbar -g ${half_res}x${height}+${half_res} -u 0 -f "$font" &
 
 xsetroot -cursor_name left_ptr
 xrdb -merge .Xresources
