@@ -22,3 +22,6 @@
 [submodule ".config/nvim/bundle/vim-airline"]
 	path = .config/nvim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
+[submodule ".config/nvim/bundle/YouCompleteMe"]
+	path = .config/nvim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
