@@ -28,10 +28,8 @@ xtitle -s -f "%%{r}%%{F${title_bg}}%%{F-}%%{B${title_bg}}%%{F${title_fg}}%s%%
 lemonbar -g ${half_res}x${height}+${half_res} -u 0 -f "$font" &
 
 xsetroot -cursor_name left_ptr
-xrdb -merge .Xresources
 setxkbmap hr
 
 sh ~/.fehbg &
 
 sxhkd &
-clip-share :0 :1 &
