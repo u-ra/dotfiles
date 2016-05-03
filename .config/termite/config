@@ -1,5 +1,5 @@
 [options]
-allow_bold           =  false
+allow_bold           =  true
 audible_bell         =  false
 browser              =  google-chrome-stable
 clickable_url        =  true
