@@ -98,10 +98,6 @@ let g:airline_left_alt_sep = '░'
 let g:airline_right_sep = '▓'
 let g:airline_right_alt_sep = '░'
 
-" Promptline
-let g:promptline_preset = 'powerlineclone'
-let g:promptline_powerline_symbols = 1
-
 " gtags
 if filereadable("GTAGS")
 	source /usr/share/gtags/gtags-cscope.vim
