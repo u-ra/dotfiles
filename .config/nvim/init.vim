@@ -12,7 +12,6 @@ set incsearch			" do incremental searching
 set nowrap			" don't word wrap lines
 set hidden			" don't fucking whine about unsaved buffers
 set list lcs=trail:·,tab:»·	" show whitespace
-set softtabstop=8		" number of spaces in tab when editing
 set shiftwidth=8		" XXX: gotta RTFM
 set tabstop=8			" number of visual spaces per TAB
 set ignorecase			" case insensitive search
