@@ -9,3 +9,7 @@
 	tool = vimdiff
 [color]
 	ui = auto
+[color "grep"]
+	linenumber = bold green
+[grep]
+	lineNumber = true
