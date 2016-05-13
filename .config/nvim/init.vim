@@ -64,10 +64,11 @@ endif " has("autocmd")
 
 " man pages
 source $VIMRUNTIME/ftplugin/man.vim
-map <silent> <F3> :Man <cword><CR>
+nnoremap <leader>m :Man <cword><CR>
 
 " C-] is not really accessible on hr keyboard
-map <silent> <F2> <C-]>
+nnoremap <leader>ji :cs find g <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>jc :cs find c <C-R>=expand("<cword>")<CR><CR>
 
 " let pathogen do its thing
 call pathogen#interpose('bundle/{}')
