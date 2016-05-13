@@ -77,7 +77,7 @@ call pathogen#helptags()
 " colorscheme
 set background=dark
 let base16colorspace=256
-colorscheme base16-monokai
+colorscheme base16-default
 
 " Ctrl-P default are, indeed, retarded
 let g:ctrlp_regexp = 1
@@ -106,3 +106,5 @@ if filereadable("GTAGS")
 	set cscopetag
 	:GtagsCscope
 endif
+
+autocmd BufNewFile,BufRead /home/jura/harman/* set nowrap tabstop=4 shiftwidth=4 expandtab

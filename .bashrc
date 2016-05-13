@@ -2,14 +2,11 @@
 [[ $- != *i* ]] && return
 [[ -z $DISPLAY && "$XDG_VTNR" == "1" ]] && exec startx
 
-export CCACHE_BASEDIR=/home/jura
-export CCACHE_DIR=/scratch/ccache
 export EDITOR=vim
 export HISTCONTROL=ignoredups
 export LESS="-S -#5 -q -R -X -i"
 export PAGER=less
 export PATH=~/bin:$PATH
-export USE_CCACHE=1
 
 alias d='git diff' # suck it, bash completion
 alias diff='colordiff -u'
@@ -39,3 +36,15 @@ man() {
 	LESS_TERMCAP_us=$'\E[01;34m' \
 	man "$@"
 }
+
+cenv() {
+    cd ~/harman/sources/development/trunk/middleware/setenv
+    source setenv_x64_linux.sh
+    export LD_LIBRARY_PATH=$BUILD_EXPORTS
+    cd $PROJECTROOT/..
+}
+
+function cgdb() {
+    gdb $BUILD_EXPORTS_APP/command_line_app_v2 $(pidof command_line_app_v2)
+}
+
