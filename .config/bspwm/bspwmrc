@@ -22,4 +22,4 @@ setxkbmap hr
 
 sh ~/.fehbg &
 
-sxhkd &
+sxhkd -m -1 &
