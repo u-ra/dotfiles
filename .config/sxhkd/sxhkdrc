@@ -22,9 +22,13 @@ alt + b
 alt + shift + space
     bspc node -t ~floating
 
-# Rotate windows 90 degrees
+# Rotate windows CW 90 degrees
 alt + Tab
     bspc node @focused:/ -R 90
+
+# Rotate windows CCW 90 degrees
+alt + shift + Tab
+    bspc node @focused:/ -R -90
 
 # Move window into a presel
 alt + grave
