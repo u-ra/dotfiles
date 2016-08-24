@@ -64,7 +64,6 @@ else
 endif " has("autocmd")
 
 " man pages
-source $VIMRUNTIME/ftplugin/man.vim
 nnoremap <leader>m :Man <cword><CR>
 
 " C-] is not really accessible on hr keyboard
