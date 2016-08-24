@@ -25,3 +25,6 @@
 [submodule ".config/nvim/bundle/YouCompleteMe"]
 	path = .config/nvim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule ".config/nvim/bundle/chromatica.nvim"]
+	path = .config/nvim/bundle/chromatica.nvim
+	url = https://github.com/arakashic/chromatica.nvim

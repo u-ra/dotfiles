@@ -92,6 +92,10 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
+" Chromatica
+let g:chromatica#libclang_path='/usr/lib'
+let g:chromatica#responsive_mode=1
+
 " Airline
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
