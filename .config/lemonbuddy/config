@@ -1,0 +1,125 @@
+;=====================================================
+;
+;   To learn more about how to configure Lemonbuddy
+;   go to https://github.com/jaagr/lemonbuddy
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[settings]
+; Limit the amount of events sent to lemonbar within a set timeframe:
+; - "Allow <throttle_limit> updates within <throttle_ms> of time"
+; Default values:
+;throttle_limit = 5
+;throttle_ms = 50
+
+[bar/bar]
+bottom = false
+dock = false
+
+width = 100%
+height = 16
+
+background = #181818
+foreground = #fff
+linecolor = #ffffff
+
+spacing = 1
+lineheight = 0
+
+;separator = ▓
+
+;locale = en_US.UTF-8
+
+padding_left = 0
+padding_right = 0
+module_margin_left = 0
+module_margin_right = 0
+
+font-0 = NotoSans:size=8;0
+font-1 = FontAwesome:size=9:weight=heavy;0
+
+modules-left = bspwm
+modules-center = xtitle
+modules-right = volume cpu ram battery clock
+
+[module/battery]
+type = internal/battery
+full_at = 99
+battery = BAT0
+adapter = AC
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+bar-capacity-width = 10
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate_ms = 750
+format-charging-padding = 2
+format-charging-background = #7cafc2
+format-charging-foreground = #181818
+
+[module/xtitle]
+type = custom/script
+exec = xtitle -s
+tail = true
+
+[module/cpu]
+type = internal/cpu
+label =  %percentage%
+format-background = #a1b56c
+format-foreground = #181818
+format-padding = 2
+
+[module/ram]
+type = internal/memory
+label =  %percentage_used%
+format-background = #f7ca88
+format-foreground = #181818
+format-padding = 2
+
+[module/clock]
+type = internal/date
+format =   <date>
+date = %Y-%m-%d %H:%M
+format-background = #ab4642
+format-foreground = #181818
+format-padding = 2
+
+[module/volume]
+type = internal/volume
+
+format-volume-background = #ba8baf
+format-volume-foreground = #181818
+format-volume-padding = 2
+format-muted-background = #ba8baf
+format-muted-foreground = #181818
+format-muted-padding = 2
+
+label-volume =  %percentage%
+label-muted = Sound is muted
+
+[module/bspwm]
+type = internal/bspwm
+label-urgent = 
+label-urgent-background = #7cafc2
+label-urgent-foreground = #af2031
+label-active = 
+label-active-background = #7cafc2
+label-active-padding = 1
+label-occupied = 
+label-occupied-background = #7cafc2
+label-occupied-padding = 1
+label-empty = 
+label-empty-background = #7cafc2
+label-empty-padding = 1
+
+; vim:ft=dosini
