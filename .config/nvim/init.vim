@@ -99,6 +99,7 @@ let g:chromatica#responsive_mode=1
 " Airline
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#ycm#enabled = 1
 
 " gtags
 if filereadable("GTAGS")
