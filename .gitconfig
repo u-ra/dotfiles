@@ -13,3 +13,5 @@
 	linenumber = bold green
 [grep]
 	lineNumber = true
+[diff]
+	compactionHeuristic = true
