@@ -98,7 +98,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 " gtags
 if filereadable("GTAGS")
-	source /usr/share/gtags/gtags-cscope.vim
+	source /usr/share/vim/vimfiles/plugin/gtags-cscope.vim
 	set cscopetag
 	:GtagsCscope
 endif
