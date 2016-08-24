@@ -80,10 +80,10 @@ super + m
     amixer set Master toggle
 
 alt + d
-    rofi -color-window '#181818,#b8bb26,#d8d8d8' \
-    -color-normal '#181818,#d8d8d8,#262626,#3a3a3a,#d75f00' \
-    -bw 2 -font 'envypn 13' -width 15 -terminal termite \
-    -show run -pid /tmp/rofi.pid
+    rofi -show run
+
+alt + s
+    rofi -show ssh
 
 # make sxhkd reload its configuration files:
 alt + Escape
