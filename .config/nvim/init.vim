@@ -23,6 +23,7 @@ set completeopt=menuone		" fuck off, preview window
 set cursorline			" highlight current line
 set colorcolumn=100		" not that anyone gives a shit
 set title			" update terminal window title
+set termguicolors		" use truecolor in terminal
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
