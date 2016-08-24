@@ -19,7 +19,6 @@ set nu				" show line numbers
 set laststatus=2		" always show status line
 set mouse=a			" enable mouse for all modes
 set updatetime=1000		" write swap file after a second spent idling
-set omnifunc=ccomplete#Complete	" we use C god damnit
 set completeopt=menuone		" fuck off, preview window
 set cursorline			" highlight current line
 set colorcolumn=100		" not that anyone gives a shit
