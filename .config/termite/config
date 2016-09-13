@@ -9,7 +9,7 @@ dynamic_title        =  true
 mouse_autohide       =  false
 scroll_on_keystroke  =  true
 scroll_on_output     =  false
-scrollback_lines     =  10000
+scrollback_lines     =  20000
 search_wrap          =  true
 urgent_on_bell       =  true
 
