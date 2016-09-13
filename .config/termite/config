@@ -13,7 +13,7 @@ scrollback_lines     =  20000
 search_wrap          =  true
 urgent_on_bell       =  true
 
-font = Fira Mono 14px
+font = Iosevka Term 14px
 
 [colors]
 color0   =  #181818

@@ -8,7 +8,7 @@ Xft.rgba: rgb
 
 rofi.modi: run,ssh
 rofi.opacity: 95
-rofi.font: Fira Mono 14px
+rofi.font: Iosevka Term 14px
 rofi.color-enabled: true
 rofi.color-window: #181818,#ae81ff,#d8d8d8
 rofi.color-normal: #181818,#d8d8d8,#262626,#ae81ff,#181818
