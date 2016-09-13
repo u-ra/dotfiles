@@ -28,21 +28,17 @@ linecolor = #ffffff
 spacing = 1
 lineheight = 0
 
-;separator = ▓
-
-;locale = en_US.UTF-8
-
 padding_left = 0
 padding_right = 0
 module_margin_left = 0
 module_margin_right = 0
 
-font-0 = NotoSans:size=8;0
+font-0 = NotoSans:pixelsize=11;0
 font-1 = FontAwesome:size=9:weight=heavy;0
 
-modules-left = bspwm
-modules-center = xtitle
-modules-right = volume cpu ram battery clock
+modules-left = bspwm xtitle
+modules-center =
+modules-right = mpd volume cpu ram battery clock
 
 [module/battery]
 type = internal/battery
@@ -64,8 +60,26 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate_ms = 750
 format-charging-padding = 2
-format-charging-background = #7cafc2
-format-charging-foreground = #181818
+format-charging-foreground = #7cafc2
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+format-online =   <label-song>  <toggle> <icon-prev> <icon-next>  <icon-random>
+format-offline = <label-offline>
+format-offline-offset = -8
+
+; By only specifying alpha value, it will be applied to the bar's default foreground
+;label-time-foreground = #66
+label-offline = mpd is off
+;label-offline-foreground = #66
+
+icon-play = 
+icon-pause = 
+icon-random = 
+icon-next = 
+icon-prev = 
 
 [module/xtitle]
 type = custom/script
@@ -75,33 +89,28 @@ tail = true
 [module/cpu]
 type = internal/cpu
 label =  %percentage%
-format-background = #a1b56c
-format-foreground = #181818
+format-foreground = #a1b56c
 format-padding = 2
 
 [module/ram]
 type = internal/memory
 label =  %percentage_used%
-format-background = #f7ca88
-format-foreground = #181818
+format-foreground = #f7ca88
 format-padding = 2
 
 [module/clock]
 type = internal/date
 format =   <date>
 date = %Y-%m-%d %H:%M
-format-background = #ab4642
-format-foreground = #181818
+format-foreground = #ab4642
 format-padding = 2
 
 [module/volume]
 type = internal/volume
 
-format-volume-background = #ba8baf
-format-volume-foreground = #181818
+format-volume-foreground = #ba8baf
 format-volume-padding = 2
-format-muted-background = #ba8baf
-format-muted-foreground = #181818
+format-muted-foreground = #ba8baf
 format-muted-padding = 2
 
 label-volume =  %percentage%
@@ -110,16 +119,16 @@ label-muted = Sound is muted
 [module/bspwm]
 type = internal/bspwm
 label-urgent = 
-label-urgent-background = #7cafc2
 label-urgent-foreground = #af2031
+label-urgent-padding = 1
 label-active = 
-label-active-background = #7cafc2
+label-active-foreground = #7cafc2
 label-active-padding = 1
 label-occupied = 
-label-occupied-background = #7cafc2
+label-occupied-foreground = #7cafc2
 label-occupied-padding = 1
 label-empty = 
-label-empty-background = #7cafc2
+label-empty-foreground = #7cafc2
 label-empty-padding = 1
 
 ; vim:ft=dosini
