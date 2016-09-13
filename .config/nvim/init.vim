@@ -2,13 +2,7 @@ if v:progname =~? "evim"
 	finish
 endif
 
-set nocompatible		" drop vi compatibility
-set backspace=indent,eol,start	" allow backspacing over everything in insert mode
-set nobackup			" do not keep a backup file, use versions instead
-set history=50			" keep 50 lines of command line history
-set ruler			" show the cursor position all the time
 set showcmd			" display incomplete commands
-set incsearch			" do incremental searching
 set nowrap			" don't word wrap lines
 set hidden			" don't fucking whine about unsaved buffers
 set list lcs=trail:·,tab:»·	" show whitespace
@@ -16,9 +10,6 @@ set shiftwidth=8		" XXX: gotta RTFM
 set tabstop=8			" number of visual spaces per TAB
 set ignorecase			" case insensitive search
 set nu				" show line numbers
-set laststatus=2		" always show status line
-set mouse=a			" enable mouse for all modes
-set updatetime=1000		" write swap file after a second spent idling
 set completeopt=menuone		" fuck off, preview window
 set cursorline			" highlight current line
 set colorcolumn=100		" not that anyone gives a shit
