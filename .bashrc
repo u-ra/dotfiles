@@ -37,14 +37,3 @@ man() {
 	man "$@"
 }
 
-cenv() {
-    cd ~/harman/sources/development/trunk/middleware/setenv
-    source setenv_x64_linux.sh
-    export LD_LIBRARY_PATH=$BUILD_EXPORTS
-    cd $PROJECTROOT/..
-}
-
-function cgdb() {
-    gdb $BUILD_EXPORTS_APP/command_line_app_v2 $(pidof command_line_app_v2)
-}
-
