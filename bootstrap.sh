@@ -18,6 +18,7 @@ CONFIG_DIRS="\
 	nvim \
 	sxhkd\
 	termite \
+	pacaur \
 	"
 
 for F in $BASE_FILES
