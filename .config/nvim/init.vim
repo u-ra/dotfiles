@@ -67,7 +67,7 @@ call pathogen#helptags()
 
 " colorscheme
 set background=dark
-colorscheme base16-harmonic16-dark
+colorscheme base16-materia
 
 " Ctrl-P default are, indeed, retarded
 let g:ctrlp_regexp = 1

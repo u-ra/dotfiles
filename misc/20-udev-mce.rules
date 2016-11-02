@@ -1,0 +1,1 @@
+ACTION=="add|change", SUBSYSTEM=="rc", ATTR{protocols}="rc-6"

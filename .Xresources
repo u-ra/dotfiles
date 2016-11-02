@@ -10,9 +10,14 @@ rofi.modi: run,ssh
 rofi.opacity: 95
 rofi.font: Iosevka Term 14px
 rofi.color-enabled: true
-rofi.color-window: #091623,#ae81ff,#d8d8d8
-rofi.color-normal: #091623,#d8d8d8,#0b1c2c,#ae81ff,#181818
+/* background border-color separator-color */
+rofi.color-window: #263238,#82aaff,#cdd3de
+/* background foreground background-alt highlight-background highlight-foreground */
+rofi.color-normal: #263238,#cdd3de,#37474f,#82aaff,#263238
 rofi.bw: 2
 rofi.terminal: termite
 rofi.width: 20
 rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
+
+Xautolock.time: 5
+Xautolock.locker: /home/jura/bin/screenlock.sh

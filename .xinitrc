@@ -1,9 +1,21 @@
 exec >~/.xsession-errors
+exec 2>&1
+
 shopt -s huponexit
 
-xrandr -dpi 102
+export `gnome-keyring-daemon`
+
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
+
+xrandr --output HDMI1 --auto --left-of eDP1
+
+start-pulseaudio-x11
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+
+if `lsusb | grep -q Griffin`; then
+    setxkbmap -option altwin:swap_alt_win
+fi
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
@@ -12,7 +24,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
-VBoxClient-all
+mpd &
+
+xautolock &
 
 export PATH=/home/jura/bin:$PATH
 exec bspwm

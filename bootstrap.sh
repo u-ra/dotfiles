@@ -7,7 +7,6 @@ BASE_FILES="\
 	.dircolors \
 	.gitconfig \
 	.inputrc \
-	.vimrc \
 	.xinitrc \
 	.yaourtrc \
 	.pam_environment \
@@ -19,6 +18,7 @@ CONFIG_DIRS="\
 	sxhkd\
 	termite \
 	pacaur \
+	mpd \
 	"
 
 for F in $BASE_FILES
@@ -36,5 +36,5 @@ do
 done
 
 cd dotfiles
-git submodule update --init
+git submodule update --init --recursive
 cd ..

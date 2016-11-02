@@ -50,8 +50,11 @@ alt + ctrl + {Left,Down,Up,Right}
     bspc node -p "$dir"
 
 # Go to desktop
+#alt + {1-9,0}
+#    item="^{1-9,10}"; \
+#
 alt + {1-9,0}
-    item="^{1-9,10}"; \
+    item="{1-9,0}"; \
     bspc query --desktops --desktop "$\{item\}.focused" > /dev/null && item=last; \
     bspc desktop -f "$item"
 
@@ -62,6 +65,12 @@ alt + shift + {1-9,0}
 #
 # wm independent hotkeys
 #
+XF86MonBrightnessDown
+    xbacklight -dec 5
+
+XF86MonBrightnessUp
+    xbacklight -inc 5
+
 alt + Return
     termite
 
@@ -70,6 +79,15 @@ shift + Print
 
 super + m
     amixer set Master toggle
+
+super + Left
+    mpc prev
+
+super + Right
+    mpc next
+
+super + l
+    /home/jura/bin/screenlock.sh
 
 alt + d
     rofi -show run
