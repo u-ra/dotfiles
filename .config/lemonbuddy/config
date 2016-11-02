@@ -14,121 +14,167 @@
 ;throttle_limit = 5
 ;throttle_ms = 50
 
-[bar/bar]
+color-00  =  #263238
+color-01  =  #ec5f67
+color-02  =  #8bd649
+color-03  =  #ffcc00
+color-04  =  #89ddff
+color-05  =  #82aaff
+color-06  =  #80cbc4
+color-07  =  #cdd3de
+color-08  =  #707880
+color-09  =  #ec5f67
+color-10  =  #8bd649
+color-11  =  #ffcc00
+color-12  =  #89ddff
+color-13  =  #82aaff
+color-14  =  #80cbc4
+color-15  =  #ffffff
+color-16  =  #ea9560
+color-17  =  #ec5f67
+color-18  =  #2c393f
+color-19  =  #37474f
+color-20  =  #c9ccd3
+color-21  =  #d5dbe5
+
+font-0 = NotoSansUI:pixelsize=11;0
+font-1 = MaterialIcons:pixelsize=14:weight=heavy;0
+
+[bar/main]
 bottom = false
 dock = false
-
+monitor = eDP1
 width = 100%
 height = 16
-
-background = #181818
-foreground = #fff
-linecolor = #ffffff
-
+background = ${settings.color-00}
+foreground = ${settings.color-07}
 spacing = 1
 lineheight = 0
-
 padding_left = 0
 padding_right = 0
-module_margin_left = 0
-module_margin_right = 0
-
-font-0 = NotoSans:pixelsize=11;0
-font-1 = FontAwesome:size=9:weight=heavy;0
-
-modules-left = bspwm xtitle
+module_margin_left = 1
+module_margin_right = 1
+font-0 = NotoSansUI:pixelsize=11;0
+font-1 = MaterialIcons:pixelsize=14:weight=heavy;0
+modules-left = bspwm
 modules-center =
-modules-right = mpd volume cpu ram battery clock
+modules-right = mpd wireless-network wired-network backlight volume cpu ram battery clock
+tray-position = right
+locale = hr_HR.UTF-8
 
-[module/battery]
-type = internal/battery
-full_at = 99
-battery = BAT0
-adapter = AC
-format-charging = <animation-charging> <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-bar-capacity-width = 10
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate_ms = 750
-format-charging-padding = 2
-format-charging-foreground = #7cafc2
+[bar/ext]
+bottom = false
+dock = false
+monitor = HDMI1
+width = 100%
+height = 16
+background = ${settings.color-00}
+foreground = ${settings.color-07}
+spacing = 1
+lineheight = 0
+padding_left = 0
+padding_right = 0
+module_margin_left = 1
+module_margin_right = 1
+font-0 = NotoSansUI:pixelsize=11;0
+font-1 = MaterialIcons:pixelsize=14:weight=heavy;0
+modules-left = bspwm
+modules-center =
+modules-right = mpd wireless-network wired-network backlight volume cpu ram battery clock
+locale = hr_HR.UTF-8
+
+[module/bspwm]
+type = internal/bspwm
+label-urgent = 
+label-urgent-foreground = ${settings.color-17}
+label-active = 
+label-active-foreground = ${settings.color-04}
+label-occupied = 
+label-empty = 
 
 [module/mpd]
 type = internal/mpd
 host = 127.0.0.1
 port = 6600
-format-online =   <label-song>  <toggle> <icon-prev> <icon-next>  <icon-random>
-format-offline = <label-offline>
-format-offline-offset = -8
+format-online =  <label-song> <toggle> <icon-prev> <icon-next>
+format-online-foreground = ${settings.color-21}
+format-offline =   <label-offline>
+format-offline-foreground = ${settings.color-21}
+label-offline = Off
+icon-play = 
+icon-pause = 
+icon-next = 
+icon-prev = 
 
-; By only specifying alpha value, it will be applied to the bar's default foreground
-;label-time-foreground = #66
-label-offline = mpd is off
-;label-offline-foreground = #66
+[module/wireless-network]
+type = internal/network
+interface = wlp2s0
+format-connected = <label-connected>
+format-connected-foreground = ${settings.color-05}
+label-connected =  %essid% %signal% %local_ip%
+format-disconnected = <label-disconnected>
+format-disconnected-foreground = ${settings.color-05}
+label-disconnected =  Disconnected
 
-icon-play = 
-icon-pause = 
-icon-random = 
-icon-next = 
-icon-prev = 
+[module/wired-network]
+type = internal/network
+interface = enp3s0
+format-connected = <label-connected>
+format-connected-foreground = ${settings.color-05}
+label-connected =  %linkspeed% %local_ip%
+format-disconnected = <label-disconnected>
+format-disconnected-foreground = ${settings.color-05}
+label-disconnected =  Disconnected
 
-[module/xtitle]
-type = custom/script
-exec = xtitle -s
-tail = true
-
-[module/cpu]
-type = internal/cpu
-label =  %percentage%
-format-foreground = #a1b56c
-format-padding = 2
-
-[module/ram]
-type = internal/memory
-label =  %percentage_used%
-format-foreground = #f7ca88
-format-padding = 2
-
-[module/clock]
-type = internal/date
-format =   <date>
-date = %Y-%m-%d %H:%M
-format-foreground = #ab4642
-format-padding = 2
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = <ramp> <label>
+format-foreground = ${settings.color-16}
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+label = %percentage%
 
 [module/volume]
 type = internal/volume
+format-volume = <label-volume>
+format-volume-foreground = ${settings.color-16}
+label-volume =  %percentage%
+format-muted = <label-muted>
+label-muted =  Muted
 
-format-volume-foreground = #ba8baf
-format-volume-padding = 2
-format-muted-foreground = #ba8baf
-format-muted-padding = 2
+[module/cpu]
+type = internal/cpu
+format = <label>
+format-foreground = ${settings.color-16}
+label =  %percentage%
 
-label-volume =  %percentage%
-label-muted = Sound is muted
+[module/ram]
+type = internal/memory
+format = <label>
+format-foreground = ${settings.color-16}
+label =  %percentage_used%
 
-[module/bspwm]
-type = internal/bspwm
-label-urgent = 
-label-urgent-foreground = #af2031
-label-urgent-padding = 1
-label-active = 
-label-active-foreground = #7cafc2
-label-active-padding = 1
-label-occupied = 
-label-occupied-foreground = #7cafc2
-label-occupied-padding = 1
-label-empty = 
-label-empty-foreground = #7cafc2
-label-empty-padding = 1
+[module/battery]
+type = internal/battery
+full_at = 99
+battery = BAT1
+adapter = ACAD
+format-charging = <label-charging>
+format-charging-foreground = ${settings.color-16}
+label-charging =  %percentage%
+format-discharging = <label-discharging>
+format-discharging-foreground = ${settings.color-16}
+label-discharging =  %percentage%
+format-full = <label-full>
+format-full-foreground = ${settings.color-16}
+label-full =  %percentage%
+
+[module/clock]
+type = internal/date
+format =   <date>
+format-foreground = ${settings.color-05}
+date = %c
 
 ; vim:ft=dosini
