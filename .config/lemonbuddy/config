@@ -80,7 +80,7 @@ font-0 = NotoSansUI:pixelsize=11;0
 font-1 = MaterialIcons:pixelsize=14:weight=heavy;0
 modules-left = bspwm
 modules-center =
-modules-right = mpd wireless-network wired-network backlight volume cpu ram battery clock
+modules-right = mpd wireless-network wired-network volume cpu ram battery clock
 locale = hr_HR.UTF-8
 
 [module/bspwm]
