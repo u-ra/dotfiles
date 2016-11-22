@@ -28,3 +28,6 @@
 [submodule ".config/nvim/bundle/chromatica.nvim"]
 	path = .config/nvim/bundle/chromatica.nvim
 	url = https://github.com/arakashic/chromatica.nvim
+[submodule ".config/nvim/bundle/auto-pairs"]
+	path = .config/nvim/bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
