@@ -38,3 +38,6 @@ polybar ext &
 polybar main &
 
 compton -b
+
+skypeforlinux &
+thunderbird &
