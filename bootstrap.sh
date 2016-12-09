@@ -7,6 +7,7 @@ BASE_FILES="\
 	.colordiffrc \
 	.compton.conf \
 	.dircolors \
+	.gdbinit \
 	.gitconfig \
 	.inputrc \
 	.xinitrc \
