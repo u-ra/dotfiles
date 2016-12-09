@@ -15,6 +15,7 @@ set cursorline			" highlight current line
 set colorcolumn=100		" not that anyone gives a shit
 set title			" update terminal window title
 set termguicolors		" use truecolor in terminal
+set inccommand=nosplit		" live preview
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
