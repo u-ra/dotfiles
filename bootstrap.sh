@@ -3,6 +3,7 @@
 BASE_FILES="\
 	.Xresources \
 	.bashrc \
+	.bashrc-prompt \
 	.colordiffrc \
 	.compton.conf \
 	.dircolors \
