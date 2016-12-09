@@ -40,9 +40,12 @@ color-21  =  #d5dbe5
 font-0 = NotoSansUI:pixelsize=11;0
 font-1 = MaterialIcons:pixelsize=14:weight=heavy;0
 
+[global/wm]
+margin-bottom = 0
+
 [bar/main]
 bottom = false
-dock = false
+override-redirect = false
 monitor = eDP1
 width = 100%
 height = 16
@@ -65,7 +68,7 @@ locale = hr_HR.UTF-8
 
 [bar/ext]
 bottom = false
-dock = false
+override-redirect = false
 monitor = HDMI1
 width = 100%
 height = 16
@@ -89,8 +92,8 @@ locale = hr_HR.UTF-8
 type = internal/bspwm
 label-urgent = 
 label-urgent-foreground = ${settings.color-17}
-label-active = 
-label-active-foreground = ${settings.color-04}
+label-focused = 
+label-focused-foreground = ${settings.color-04}
 label-occupied = 
 label-empty = 
 
@@ -175,8 +178,8 @@ label-full =  %percentage%
 
 [module/clock]
 type = internal/date
-format =   <date>
+format = <label>
 format-foreground = ${settings.color-05}
-date = %c
+date =  %c
 
 ; vim:ft=dosini
