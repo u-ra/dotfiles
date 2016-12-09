@@ -20,9 +20,11 @@ bspc config pointer_action1		move
 ext=$(xrandr  | grep ^HDMI | awk '{print $2}')
 if [ "$ext" == "connected" ]; then
 	bspc monitor HDMI1 -d 1 2 3 4 5
+	bspc monitor eDP1 -d 6 7 8 9 0
+else
+	bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 0
 fi
 
-bspc monitor eDP1 -d 6 7 8 9 0
 
 xsetroot -cursor_name left_ptr
 setxkbmap hr
