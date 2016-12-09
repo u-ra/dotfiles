@@ -15,7 +15,8 @@ bspc config presel_feedback_color	'#82aaff'
 bspc config pointer_modifier		mod1
 bspc config pointer_action1		move
 
-#bspc rule -a google-chrome:crx_nckgahadagoaajjgafhacjanaoiihapd state=floating
+bspc rule -a skypeforlinux:skypeforlinux desktop=^8
+bspc rule -a Thunderbird:* desktop=^9
 
 ext=$(xrandr  | grep ^HDMI | awk '{print $2}')
 if [ "$ext" == "connected" ]; then
