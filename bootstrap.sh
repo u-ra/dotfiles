@@ -4,6 +4,7 @@ BASE_FILES="\
 	.Xresources \
 	.bashrc \
 	.colordiffrc \
+	.compton.conf \
 	.dircolors \
 	.gitconfig \
 	.inputrc \
