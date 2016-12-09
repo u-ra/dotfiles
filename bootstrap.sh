@@ -17,6 +17,7 @@ CONFIG_DIRS="\
 	sxhkd\
 	termite \
 	pacaur \
+	polybar \
 	mpd \
 	"
 
