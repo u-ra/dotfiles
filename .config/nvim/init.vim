@@ -101,3 +101,4 @@ if filereadable("GTAGS")
 endif
 
 autocmd BufNewFile,BufRead /home/jura/harman/* set nowrap tabstop=4 shiftwidth=4 expandtab
+autocmd BufNewFile,BufRead /home/jura/harman/* TagbarOpen
