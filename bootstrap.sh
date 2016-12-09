@@ -8,7 +8,6 @@ BASE_FILES="\
 	.gitconfig \
 	.inputrc \
 	.xinitrc \
-	.yaourtrc \
 	.pam_environment \
 	"
 
