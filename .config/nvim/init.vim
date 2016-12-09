@@ -86,6 +86,7 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 " Chromatica
 let g:chromatica#libclang_path='/usr/lib'
 let g:chromatica#responsive_mode=1
+let g:chromatica#enable_at_startup=1
 
 " Airline
 let g:airline_powerline_fonts=1
