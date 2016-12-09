@@ -9,6 +9,7 @@ BASE_FILES="\
 	.dircolors \
 	.gdbinit \
 	.gitconfig \
+	.gtkrc-2.0 \
 	.inputrc \
 	.xinitrc \
 	.pam_environment \
@@ -16,12 +17,13 @@ BASE_FILES="\
 
 CONFIG_DIRS="\
 	bspwm \
+	gtk-3.0 \
+	mpd \
 	nvim \
 	sxhkd\
 	termite \
 	pacaur \
 	polybar \
-	mpd \
 	"
 
 for F in $BASE_FILES
