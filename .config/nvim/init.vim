@@ -6,10 +6,8 @@ set showcmd			" display incomplete commands
 set nowrap			" don't word wrap lines
 set hidden			" don't fucking whine about unsaved buffers
 set list lcs=trail:·,tab:»·	" show whitespace
-set shiftwidth=8		" XXX: gotta RTFM
-set tabstop=8			" number of visual spaces per TAB
 set ignorecase			" case insensitive search
-set nu				" show line numbers
+set number			" show line numbers
 set completeopt=menuone		" fuck off, preview window
 set cursorline			" highlight current line
 set colorcolumn=100		" not that anyone gives a shit
@@ -17,43 +15,16 @@ set title			" update terminal window title
 set termguicolors		" use truecolor in terminal
 set inccommand=nosplit		" live preview
 
-" Don't use Ex mode, use Q for formatting
-map Q gq
+" For all text files set 'textwidth' to 100 characters.
+autocmd FileType text setlocal textwidth=100
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-	syntax on
-	set hlsearch
-endif
-
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-	" Enable file type detection.
-	" Use the default filetype settings, so that mail gets 'tw' set to 72,
-	" 'cindent' is on in C files, etc.
-	" Also load indent files, to automatically do language-dependent indenting.
-	filetype plugin indent on
-
-	" Put these in an autocmd group, so that we can delete them easily.
-	augroup vimrcEx
-	au!
-
-	" For all text files set 'textwidth' to 100 characters.
-	autocmd FileType text setlocal textwidth=100
-
-	" When editing a file, always jump to the last known cursor position.
-	" Don't do it when the position is invalid or when inside an event handler
-	" (happens when dropping a file on gvim).
-	autocmd BufReadPost *
-	\ if line("'\"") > 0 && line("'\"") <= line("$") |
-	\   exe "normal g`\"" |
-	\ endif
-
-	augroup END
-else
-	set autoindent		" always set autoindenting on
-endif " has("autocmd")
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+autocmd BufReadPost *
+			\ if line("'\"") > 0 && line("'\"") <= line("$") |
+			\   exe "normal g`\"" |
+			\ endif
 
 " man pages
 nnoremap <leader>m :Man <cword><CR>
