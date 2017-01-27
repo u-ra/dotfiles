@@ -36,9 +36,8 @@ color-18  =  #2c393f
 color-19  =  #37474f
 color-20  =  #c9ccd3
 color-21  =  #d5dbe5
-
-font-0 = NotoSansUI:pixelsize=11;0
-font-1 = MaterialIcons:pixelsize=14:weight=heavy;0
+font-0 = NotoSansUI:pixelsize=8;1
+font-1 = Icomoon\-Ultimate:pixelsize=10;2
 
 [global/wm]
 margin-bottom = 0
@@ -48,7 +47,7 @@ bottom = false
 override-redirect = false
 monitor = eDP1
 width = 100%
-height = 16
+height = 15
 background = ${settings.color-00}
 foreground = ${settings.color-07}
 spacing = 1
@@ -56,10 +55,10 @@ underline-size = 0
 overline-size = 0
 padding_left = 0
 padding_right = 0
-module_margin_left = 1
-module_margin_right = 1
-font-0 = NotoSansUI:pixelsize=11;0
-font-1 = MaterialIcons:pixelsize=14:weight=heavy;0
+module_margin_left = 3
+module_margin_right = 3
+font-0 = ${settings.font-0}
+font-1 = ${settings.font-1}
 modules-left = bspwm
 modules-center =
 modules-right = mpd wireless-network wired-network backlight volume cpu ram battery clock
@@ -67,22 +66,24 @@ tray-position = right
 locale = hr_HR.UTF-8
 
 [bar/ext]
+dpi = 102
 bottom = false
 override-redirect = false
 monitor = HDMI1
 width = 100%
-height = 16
+height = 15
 background = ${settings.color-00}
 foreground = ${settings.color-07}
 spacing = 1
+fixed-center = false
 underline-size = 0
 overline-size = 0
-padding_left = 0
-padding_right = 0
+padding_left = 3
+padding_right = 3
 module_margin_left = 1
 module_margin_right = 1
-font-0 = NotoSansUI:pixelsize=11;0
-font-1 = MaterialIcons:pixelsize=14:weight=heavy;0
+font-0 = ${settings.font-0}
+font-1 = ${settings.font-1}
 modules-left = bspwm
 modules-center =
 modules-right = mpd wireless-network wired-network volume cpu ram battery clock
@@ -90,96 +91,139 @@ locale = hr_HR.UTF-8
 
 [module/bspwm]
 type = internal/bspwm
-label-urgent = 
+label-urgent = %icon%
+label-urgent-padding = 1
 label-urgent-foreground = ${settings.color-17}
-label-focused = 
+label-focused = %icon%
+label-focused-padding = 1
 label-focused-foreground = ${settings.color-04}
-label-occupied = 
-label-empty = 
+label-occupied = %icon%
+label-occupied-padding = 1
+label-empty = %icon%
+label-empty-padding = 1
+ws-icon-0 = 0;
+ws-icon-1 = 5;
+ws-icon-2 = 8;
+ws-icon-3 = 9;
+ws-icon-4 = 7;
+ws-icon-default = 
 
 [module/mpd]
 type = internal/mpd
 host = 127.0.0.1
 port = 6600
-format-online =  <label-song> <toggle> <icon-prev> <icon-next>
+format-online =  <label-song> <toggle> <icon-prev> <icon-next>
 format-online-foreground = ${settings.color-21}
-format-offline =   <label-offline>
+format-online-padding = 3
+format-offline =   <label-offline>
 format-offline-foreground = ${settings.color-21}
+format-offline-padding = 3
 label-offline = Off
-icon-play = 
-icon-pause = 
-icon-next = 
-icon-prev = 
+icon-play = 
+icon-play-padding = 0
+icon-pause = 
+icon-next = 
+icon-prev = 
 
 [module/wireless-network]
 type = internal/network
 interface = wlp2s0
-format-connected = <label-connected>
+format-connected = <ramp-signal> <label-connected>
 format-connected-foreground = ${settings.color-05}
-label-connected =  %essid% %signal% %local_ip%
+format-connected-padding = 2
+label-connected = %essid% %signal% %local_ip%
 format-disconnected = <label-disconnected>
 format-disconnected-foreground = ${settings.color-05}
-label-disconnected =  Disconnected
+format-disconnected-padding = 2
+label-disconnected =  Disconnected
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
 
 [module/wired-network]
 type = internal/network
 interface = enp3s0
 format-connected = <label-connected>
 format-connected-foreground = ${settings.color-05}
-label-connected =  %linkspeed% %local_ip%
+format-connected-padding = 2
+label-connected =  %linkspeed% %local_ip%
 format-disconnected = <label-disconnected>
 format-disconnected-foreground = ${settings.color-05}
-label-disconnected =  Disconnected
+format-disconnected-padding = 2
+label-disconnected =  Disconnected
 
 [module/backlight]
 type = internal/backlight
 card = intel_backlight
-format = <ramp> <label>
+format = <label>
 format-foreground = ${settings.color-16}
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-label = %percentage%
+format-padding = 2
+label =  %percentage%%
 
 [module/volume]
 type = internal/volume
 format-volume = <label-volume>
 format-volume-foreground = ${settings.color-16}
-label-volume =  %percentage%
+format-volume-padding = 2
+label-volume =  %percentage%%
 format-muted = <label-muted>
-label-muted =  Muted
+format-muted-padding = 2
+label-muted =  Muted
 
 [module/cpu]
 type = internal/cpu
 format = <label>
+format-padding = 2
 format-foreground = ${settings.color-16}
-label =  %percentage%
+label =  %percentage%%
 
 [module/ram]
 type = internal/memory
 format = <label>
+format-padding = 2
 format-foreground = ${settings.color-16}
-label =  %percentage_used%
+label =  %percentage_used%%
 
 [module/battery]
 type = internal/battery
 full_at = 99
 battery = BAT1
 adapter = ACAD
-format-charging = <label-charging>
+format-charging = <animation-charging> <label-charging>
 format-charging-foreground = ${settings.color-16}
-label-charging =  %percentage%
+format-charging-padding = 2
+label-charging = %percentage%%
 format-discharging = <label-discharging>
+format-discharging-padding = 2
 format-discharging-foreground = ${settings.color-16}
-label-discharging =  %percentage%
+label-discharging = %percentage%%
 format-full = <label-full>
+format-full-padding = 2
 format-full-foreground = ${settings.color-16}
-label-full =  %percentage%
+label-full =  %percentage%%
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
 
 [module/clock]
 type = internal/date
 format = <label>
+format-padding = 2
 format-foreground = ${settings.color-05}
-date =  %c
+date =  %c
 
 ; vim:ft=dosini
