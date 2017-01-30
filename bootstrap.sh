@@ -21,10 +21,10 @@ CONFIG_DIRS="\
 	mpd \
 	nvim \
 	sxhkd\
-	termite \
 	pacaur \
 	polybar \
 	qt5ct \
+	qterminal.org \
 	"
 
 for F in $BASE_FILES

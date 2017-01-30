@@ -72,7 +72,7 @@ XF86MonBrightnessUp
     xbacklight -inc 5
 
 alt + Return
-    termite
+    qterminal
 
 shift + Print
     scrot
