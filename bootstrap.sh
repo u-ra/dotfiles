@@ -24,6 +24,7 @@ CONFIG_DIRS="\
 	termite \
 	pacaur \
 	polybar \
+	qt5ct \
 	"
 
 for F in $BASE_FILES
