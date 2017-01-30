@@ -15,6 +15,8 @@ set title			" update terminal window title
 set termguicolors		" use truecolor in terminal
 set inccommand=nosplit		" live preview
 
+filetype plugin indent on
+
 " For all text files set 'textwidth' to 100 characters.
 autocmd FileType text setlocal textwidth=100
 
