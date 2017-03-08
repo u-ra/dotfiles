@@ -41,7 +41,7 @@ call pathogen#helptags()
 
 " colorscheme
 set background=dark
-colorscheme base16-materia
+colorscheme OceanicNext
 
 " Ctrl-P default are, indeed, retarded
 let g:ctrlp_regexp = 1
@@ -65,6 +65,8 @@ let g:chromatica#enable_at_startup=1
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ycm#enabled = 1
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_theme = 'oceanicnext'
 
 " gtags
 if filereadable("GTAGS")
