@@ -25,3 +25,6 @@
 [submodule ".config/nvim/bundle/auto-pairs"]
 	path = .config/nvim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
+[submodule ".config/nvim/bundle/oceanic-next"]
+	path = .config/nvim/bundle/oceanic-next
+	url = https://github.com/mhartington/oceanic-next
