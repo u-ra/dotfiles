@@ -24,7 +24,6 @@ CONFIG_DIRS="\
 	pacaur \
 	polybar \
 	qt5ct \
-	qterminal.org \
 	"
 
 for F in $BASE_FILES
