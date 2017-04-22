@@ -28,3 +28,6 @@
 [submodule ".config/nvim/bundle/oceanic-next"]
 	path = .config/nvim/bundle/oceanic-next
 	url = https://github.com/mhartington/oceanic-next
+[submodule ".config/nvim/bundle/vim-two-firewatch"]
+	path = .config/nvim/bundle/vim-two-firewatch
+	url = https://github.com/rakr/vim-two-firewatch
