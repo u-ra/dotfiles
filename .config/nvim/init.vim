@@ -2,7 +2,6 @@ if v:progname =~? "evim"
 	finish
 endif
 
-set showcmd			" display incomplete commands
 set nowrap			" don't word wrap lines
 set hidden			" don't fucking whine about unsaved buffers
 set list lcs=trail:·,tab:»·	" show whitespace
@@ -14,6 +13,7 @@ set colorcolumn=100		" not that anyone gives a shit
 set title			" update terminal window title
 set termguicolors		" use truecolor in terminal
 set inccommand=nosplit		" live preview
+set mouse=a			" always enable mouse
 
 filetype plugin indent on
 
@@ -31,17 +31,13 @@ autocmd BufReadPost *
 " man pages
 nnoremap <leader>m :Man <cword><CR>
 
-" C-] is not really accessible on hr keyboard
-nnoremap <leader>ji :cs find g <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>jc :cs find c <C-R>=expand("<cword>")<CR><CR>
-
 " let pathogen do its thing
 call pathogen#interpose('bundle/{}')
 call pathogen#helptags()
 
 " colorscheme
 set background=dark
-colorscheme OceanicNext
+colorscheme two-firewatch
 
 " Ctrl-P default are, indeed, retarded
 let g:ctrlp_regexp = 1
@@ -54,7 +50,6 @@ let g:ctrlp_max_files = 0
 " YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " Chromatica
 let g:chromatica#libclang_path='/usr/lib'
@@ -66,7 +61,7 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline_theme = 'oceanicnext'
+let g:airline_theme = 'twofirewatch'
 
 " gtags
 if filereadable("GTAGS")
@@ -75,5 +70,10 @@ if filereadable("GTAGS")
 	:GtagsCscope
 endif
 
-autocmd BufNewFile,BufRead /home/jura/harman/* set nowrap tabstop=4 shiftwidth=4 expandtab
-autocmd BufNewFile,BufRead /home/jura/harman/* TagbarOpen
+" code completion
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jh :YcmCompleter GoToInclude<CR>
+nnoremap <leader>ji :cs find g <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>jc :cs find c <C-R>=expand("<cword>")<CR><CR>
+
+autocmd BufNewFile,BufRead /home/jura/src/harman/* set nowrap tabstop=4 shiftwidth=4 expandtab
