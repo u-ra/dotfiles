@@ -37,3 +37,6 @@
 [submodule ".config/nvim/bundle/promptline.vim"]
 	path = .config/nvim/bundle/promptline.vim
 	url = https://github.com/plexigras/promptline.vim
+[submodule ".config/nvim/bundle/tagbar"]
+	path = .config/nvim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
