@@ -31,3 +31,6 @@
 [submodule ".config/nvim/bundle/vim-two-firewatch"]
 	path = .config/nvim/bundle/vim-two-firewatch
 	url = https://github.com/rakr/vim-two-firewatch
+[submodule ".config/nvim/bundle/vim-rtags"]
+	path = .config/nvim/bundle/vim-rtags
+	url = https://github.com/lyuts/vim-rtags
