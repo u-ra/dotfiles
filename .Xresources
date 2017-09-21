@@ -7,7 +7,7 @@ Xft.rgba: rgb
 
 rofi.modi: run,ssh
 rofi.opacity: 95
-rofi.font: Iosevka Term 14px
+rofi.font: Iosevka Medium 14px
 rofi.color-enabled: true
 /* background border-color separator-color */
 rofi.color-window: #263238,#82aaff,#cdd3de
