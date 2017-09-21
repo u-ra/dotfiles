@@ -64,17 +64,16 @@ let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_theme = 'twofirewatch'
 
-" gtags
-if filereadable("GTAGS")
-	source /usr/share/vim/vimfiles/plugin/gtags-cscope.vim
-	set cscopetag
-	:GtagsCscope
-endif
+" rtags
+let g:rtagsAutoLaunchRdm = 1
+let g:rtagsUseLocationList = 0
+
+set completefunc=RtagsCompleteFunc
 
 " code completion
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-nnoremap <leader>jh :YcmCompleter GoToInclude<CR>
-nnoremap <leader>ji :cs find g <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>jc :cs find c <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>jd :call rtags#JumpTo(g:SAME_WINDOW, { '--declaration-only' : '' })<CR>
+nnoremap <leader>ji :call rtags#JumpTo(g:SAME_WINDOW)<CR>
+nnoremap <Leader>jc :call rtags#FindRefs()<CR>
+nnoremap <Leader>js :call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
 
 autocmd BufNewFile,BufRead /home/jura/src/harman/* set nowrap tabstop=4 shiftwidth=4 expandtab
