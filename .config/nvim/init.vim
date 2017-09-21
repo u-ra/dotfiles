@@ -14,6 +14,7 @@ set title			" update terminal window title
 set termguicolors		" use truecolor in terminal
 set inccommand=nosplit		" live preview
 set mouse=a			" always enable mouse
+set backupdir=~/.local/share/nvim/backup
 
 filetype plugin indent on
 
