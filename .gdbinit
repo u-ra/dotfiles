@@ -1,5 +1,6 @@
 set pagination off
 set print pretty on
+set filename-display basename
 
 define hook-quit
     set confirm off
