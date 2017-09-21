@@ -2,10 +2,7 @@
 [[ $- != *i* ]] && return
 [[ -z $DISPLAY && "$XDG_VTNR" == "1" ]] && exec startx
 
-export EDITOR=vim
 export HISTCONTROL=ignoredups
-export LESS="-S -#5 -q -R -X -i"
-export PAGER=less
 export PATH=~/bin:$PATH
 
 alias d='git diff' # suck it, bash completion
