@@ -14,22 +14,18 @@
 ;throttle_limit = 5
 ;throttle_ms = 50
 
-base00 = #263238
-base01 = #2C393F
-base02 = #37474F
-base03 = #707880
-base04 = #C9CCD3
-base05 = #CDD3DE
-base06 = #D5DBE5
-base07 = #FFFFFF
-base08 = #EC5F67
-base09 = #EA9560
-base0A = #FFCC00
-base0B = #8BD649
-base0C = #80CBC4
-base0D = #89DDFF
-base0E = #82AAFF
-base0F = #EC5F67
+; background
+base00 = #282C34
+; empty bspwm, disabled mpd, disabled wifi
+base03 = #55606D
+; default foreground
+base04 = #D6E9FF
+; occupied bspwm
+base05 = #6E88A6
+; focused bspwm
+base0E = #D6E9FF
+; bspwm urgent
+base0F = #E06C75
 
 font-0 = NotoSansUI:pixelsize=8;1
 font-1 = Icomoon\-Ultimate:pixelsize=10;2
@@ -108,7 +104,7 @@ type = internal/mpd
 host = 127.0.0.1
 port = 6600
 format-online =  <label-song> <toggle> <icon-prev> <icon-next>
-format-online-foreground = ${settings.base09}
+format-online-foreground = ${settings.base04}
 format-online-padding = 3
 format-offline =   <label-offline>
 format-offline-foreground = ${settings.base03}
@@ -124,7 +120,7 @@ icon-prev = 
 type = internal/network
 interface = wlp2s0
 format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${settings.base0E}
+format-connected-foreground = ${settings.base04}
 format-connected-padding = 2
 label-connected = %essid% %signal%% %local_ip%
 format-disconnected = <label-disconnected>
@@ -140,7 +136,7 @@ ramp-signal-3 = 
 type = internal/network
 interface = enp3s0
 format-connected = <label-connected>
-format-connected-foreground = ${settings.base0E}
+format-connected-foreground = ${settings.base04}
 format-connected-padding = 2
 label-connected =  %linkspeed% %local_ip%
 format-disconnected = <label-disconnected>
@@ -152,14 +148,14 @@ label-disconnected =  Disconnected
 type = internal/backlight
 card = intel_backlight
 format = <label>
-format-foreground = ${settings.base09}
+format-foreground = ${settings.base04}
 format-padding = 2
 label =  %percentage%%
 
 [module/volume]
 type = internal/volume
 format-volume = <label-volume>
-format-volume-foreground = ${settings.base09}
+format-volume-foreground = ${settings.base04}
 format-volume-padding = 2
 label-volume =  %percentage%%
 format-muted = <label-muted>
@@ -171,14 +167,14 @@ label-muted =  Muted
 type = internal/cpu
 format = <label>
 format-padding = 2
-format-foreground = ${settings.base09}
+format-foreground = ${settings.base04}
 label =  %percentage%%
 
 [module/ram]
 type = internal/memory
 format = <label>
 format-padding = 2
-format-foreground = ${settings.base09}
+format-foreground = ${settings.base04}
 label =  %percentage_used%%
 
 [module/battery]
@@ -187,16 +183,16 @@ full_at = 99
 battery = BAT1
 adapter = ACAD
 format-charging = <animation-charging> <label-charging>
-format-charging-foreground = ${settings.base09}
+format-charging-foreground = ${settings.base04}
 format-charging-padding = 2
 label-charging = %percentage%%
 format-discharging = <label-discharging>
 format-discharging-padding = 2
-format-discharging-foreground = ${settings.base09}
+format-discharging-foreground = ${settings.base04}
 label-discharging = %percentage%%
 format-full = <label-full>
 format-full-padding = 2
-format-full-foreground = ${settings.base09}
+format-full-foreground = ${settings.base04}
 label-full =  %percentage%%
 
 animation-charging-0 = 
@@ -219,7 +215,7 @@ ramp-capacity-6 = 
 type = internal/date
 format = <label>
 format-padding = 2
-format-foreground = ${settings.base0E}
+format-foreground = ${settings.base04}
 date =  %c
 
 ; vim:ft=dosini
