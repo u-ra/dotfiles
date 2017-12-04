@@ -32,9 +32,20 @@ autocmd BufReadPost *
 " man pages
 nnoremap <leader>m :Man <cword><CR>
 
-" let pathogen do its thing
-call pathogen#interpose('bundle/{}')
-call pathogen#helptags()
+" vim-plug config
+let g:plug_shallow = 0
+call plug#begin('~/.local/share/nvim/plugins')
+Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'plexigras/promptline.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'arakashic/chromatica.nvim'
+Plug 'dropofwill/auto-pairs'
+Plug 'malcolmbaig/vim-two-firewatch'
+Plug 'lyuts/vim-rtags'
+Plug 'majutsushi/tagbar'
+call plug#end()
 
 " colorscheme
 set background=dark
