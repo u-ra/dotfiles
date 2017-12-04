@@ -29,4 +29,7 @@ mpd &
 xautolock &
 
 export PATH=/home/jura/bin:$PATH
+
+rdm --isystem /usr/lib/clang/5.0.0/include &
+
 exec bspwm
