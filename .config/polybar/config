@@ -27,7 +27,7 @@ base0E = #D6E9FF
 ; bspwm urgent
 base0F = #E06C75
 
-font-0 = NotoSansUI:pixelsize=8;1
+font-0 = NotoSansUI:pixelsize=9;1
 font-1 = Icomoon\-Ultimate:pixelsize=10;2
 
 [global/wm]
@@ -76,7 +76,7 @@ font-0 = ${settings.font-0}
 font-1 = ${settings.font-1}
 modules-left = bspwm
 modules-center =
-modules-right = mpd wireless-network wired-network volume cpu ram battery clock
+modules-right = mpd wireless-network wired-network volume cpu ram battery clock suspend
 locale = hr_HR.UTF-8
 
 [module/bspwm]
@@ -180,8 +180,8 @@ label =  %percentage_used%%
 [module/battery]
 type = internal/battery
 full_at = 99
-battery = BAT1
-adapter = ACAD
+battery = BAT0
+adapter = ADP1
 format-charging = <animation-charging> <label-charging>
 format-charging-foreground = ${settings.base04}
 format-charging-padding = 2
@@ -193,7 +193,7 @@ label-discharging = %percentage%%
 format-full = <label-full>
 format-full-padding = 2
 format-full-foreground = ${settings.base04}
-label-full =  %percentage%%
+label-full =  %percentage%%
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -210,6 +210,15 @@ ramp-capacity-3 = 
 ramp-capacity-4 = 
 ramp-capacity-5 = 
 ramp-capacity-6 = 
+
+[module/suspend]
+type = custom/script
+exec= echo bla
+click-left = systemctl suspend
+format = <label>
+format-foreground = #E06C75
+format-padding = 2
+label = 
 
 [module/clock]
 type = internal/date
