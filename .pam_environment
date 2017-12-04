@@ -8,3 +8,6 @@ _JAVA_AWT_WM_NONREPARENTING DEFAULT=1
 BSPWM_SOCKET                DEFAULT=/tmp/bspwm_0_0-socket
 EXPORT_FILE_TUNER_PATH      DEFAULT=/home/jura/.file_tuner.ini
 _JAVA_OPTIONS               DEFAULT="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+XDG_CONFIG_HOME             DEFAULT=/home/jura/.config
+XDG_CACHE_HOME              DEFAULT=/home/jura/.cache
+XDG_DATA_HOME               DEFAULT=/home/jura/.local/share
