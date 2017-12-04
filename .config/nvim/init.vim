@@ -76,4 +76,9 @@ nnoremap <leader>ji :call rtags#JumpTo(g:SAME_WINDOW)<CR>
 nnoremap <Leader>jc :call rtags#FindRefs()<CR>
 nnoremap <Leader>js :call rtags#FindSymbols(input("Pattern? ", "", "customlist,rtags#CompleteSymbols"))<CR>
 
+nnoremap <Leader>tt :TagbarToggle<CR>
+" push quickfix window always to the bottom
+autocmd FileType qf wincmd J
+let g:tagbar_width = 80
+
 autocmd BufNewFile,BufRead /home/jura/src/harman/* set nowrap tabstop=4 shiftwidth=4 expandtab
