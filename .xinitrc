@@ -5,9 +5,9 @@ shopt -s huponexit
 
 export `gnome-keyring-daemon`
 
-xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
+xinput --set-prop "ETPS/2 Elantech Touchpad" 275 1
 
-xrandr --output HDMI1 --auto --left-of eDP1
+xrandr --output HDMI1 --auto --right-of eDP1
 
 start-pulseaudio-x11
 
