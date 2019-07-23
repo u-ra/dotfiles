@@ -1,0 +1,32 @@
+{
+    "diagnostic.warningSign": "🤔",
+    "diagnostic.errorSign": "🤬",
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "args": [ "--log-file=/tmp/ccls.log"],
+            "filetypes": [
+                "c",
+                "cpp",
+                "cxx",
+                "cc",
+                "h"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/home/jura/.cache/ccls"
+                },
+                "highlight": {
+                    "lsRanges": true
+                }
+            }
+        }
+    }
+}
