@@ -14,17 +14,11 @@
 ;throttle_limit = 5
 ;throttle_ms = 50
 
-; background
 base00 = #282C34
-; empty bspwm, disabled mpd, disabled wifi
 base03 = #55606D
-; default foreground
-base04 = #D6E9FF
-; occupied bspwm
-base05 = #6E88A6
-; focused bspwm
-base0E = #D6E9FF
-; bspwm urgent
+base05 = #D6E9FF
+base09 = #E06C75
+base0E = #91C1F8
 base0F = #E06C75
 
 font-0 = NotoSansUI:pixelsize=9;1
@@ -40,7 +34,7 @@ monitor = eDP1
 width = 100%
 height = 15
 background = ${settings.base00}
-foreground = ${settings.base04}
+foreground = ${settings.base05}
 spacing = 1
 underline-size = 0
 overline-size = 0
@@ -52,7 +46,7 @@ font-0 = ${settings.font-0}
 font-1 = ${settings.font-1}
 modules-left = bspwm
 modules-center =
-modules-right = mpd wireless-network wired-network backlight volume cpu ram battery clock
+modules-right = mpd weather wireless-network wired-network backlight volume cpu ram battery clock
 tray-position = right
 locale = hr_HR.UTF-8
 
@@ -76,7 +70,30 @@ font-0 = ${settings.font-0}
 font-1 = ${settings.font-1}
 modules-left = bspwm
 modules-center =
-modules-right = mpd wireless-network wired-network volume cpu ram battery clock suspend
+modules-right = mpd weather wireless-network wired-network volume cpu ram battery clock suspend
+locale = hr_HR.UTF-8
+
+[bar/xephyr]
+bottom = false
+override-redirect = false
+monitor = default
+width = 100%
+height = 15
+background = ${settings.base00}
+foreground = ${settings.base05}
+spacing = 1
+fixed-center = false
+underline-size = 0
+overline-size = 0
+padding_left = 3
+padding_right = 3
+module_margin_left = 1
+module_margin_right = 1
+font-0 = ${settings.font-0}
+font-1 = ${settings.font-1}
+modules-left = bspwm
+modules-center =
+modules-right = mpd weather wireless-network wired-network volume cpu ram battery clock suspend
 locale = hr_HR.UTF-8
 
 [module/bspwm]
@@ -89,6 +106,7 @@ label-focused-padding = 1
 label-focused-foreground = ${settings.base0E}
 label-occupied = %icon%
 label-occupied-padding = 1
+label-occupied-foreground = ${settings.base05}
 label-empty = %icon%
 label-empty-padding = 1
 label-empty-foreground = ${settings.base03}
@@ -104,7 +122,7 @@ type = internal/mpd
 host = 127.0.0.1
 port = 6600
 format-online =  <label-song> <toggle> <icon-prev> <icon-next>
-format-online-foreground = ${settings.base04}
+format-online-foreground = ${settings.base09}
 format-online-padding = 3
 format-offline =   <label-offline>
 format-offline-foreground = ${settings.base03}
@@ -118,9 +136,9 @@ icon-prev = 
 
 [module/wireless-network]
 type = internal/network
-interface = wlp2s0
+interface = wlp1s0
 format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${settings.base04}
+format-connected-foreground = ${settings.base0E}
 format-connected-padding = 2
 label-connected = %essid% %signal%% %local_ip%
 format-disconnected = <label-disconnected>
@@ -134,9 +152,9 @@ ramp-signal-3 = 
 
 [module/wired-network]
 type = internal/network
-interface = enp3s0
+interface = enp0s31f6
 format-connected = <label-connected>
-format-connected-foreground = ${settings.base04}
+format-connected-foreground = ${settings.base0E}
 format-connected-padding = 2
 label-connected =  %linkspeed% %local_ip%
 format-disconnected = <label-disconnected>
@@ -148,33 +166,39 @@ label-disconnected =  Disconnected
 type = internal/backlight
 card = intel_backlight
 format = <label>
-format-foreground = ${settings.base04}
+format-foreground = ${settings.base0E}
 format-padding = 2
 label =  %percentage%%
 
 [module/volume]
 type = internal/volume
-format-volume = <label-volume>
-format-volume-foreground = ${settings.base04}
+format-volume = <ramp-volume> <label-volume>
+format-volume-foreground = ${settings.base0E}
 format-volume-padding = 2
-label-volume =  %percentage%%
+label-volume = %percentage%%
 format-muted = <label-muted>
 format-muted-foreground = ${settings.base03}
 format-muted-padding = 2
 label-muted =  Muted
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-volume-5 = 
 
 [module/cpu]
 type = internal/cpu
 format = <label>
 format-padding = 2
-format-foreground = ${settings.base04}
+format-foreground = ${settings.base0E}
 label =  %percentage%%
 
 [module/ram]
 type = internal/memory
 format = <label>
 format-padding = 2
-format-foreground = ${settings.base04}
+format-foreground = ${settings.base0E}
 label =  %percentage_used%%
 
 [module/battery]
@@ -183,16 +207,16 @@ full_at = 99
 battery = BAT0
 adapter = ADP1
 format-charging = <animation-charging> <label-charging>
-format-charging-foreground = ${settings.base04}
+format-charging-foreground = ${settings.base0E}
 format-charging-padding = 2
 label-charging = %percentage%%
-format-discharging = <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-padding = 2
-format-discharging-foreground = ${settings.base04}
+format-discharging-foreground = ${settings.base0E}
 label-discharging = %percentage%%
 format-full = <label-full>
 format-full-padding = 2
-format-full-foreground = ${settings.base04}
+format-full-foreground = ${settings.base0E}
 label-full =  %percentage%%
 
 animation-charging-0 = 
@@ -224,7 +248,15 @@ label = 
 type = internal/date
 format = <label>
 format-padding = 2
-format-foreground = ${settings.base04}
+format-foreground = ${settings.base0E}
 date =  %c
+
+[module/weather]
+type = custom/script
+interval = 300
+format = <label>
+format-foreground = ${settings.base0E}
+format-padding = 1
+exec = /home/jura/bin/weather
 
 ; vim:ft=dosini
