@@ -24,13 +24,13 @@ ddiff() {
 }
 
 man() {
-	env LESS_TERMCAP_mb=$'\E[01;31m' \
-	LESS_TERMCAP_md=$'\E[01;32m' \
-	LESS_TERMCAP_me=$'\E[0m' \
-	LESS_TERMCAP_se=$'\E[0m' \
-	LESS_TERMCAP_so=$'\E[01;31m\E[47m' \
-	LESS_TERMCAP_ue=$'\E[0m' \
-	LESS_TERMCAP_us=$'\E[01;34m' \
-	man "$@"
+        env LESS_TERMCAP_mb=$'\E[01;32m' \
+        LESS_TERMCAP_md=$'\E[01;31m' \
+        LESS_TERMCAP_me=$'\E[0m' \
+        LESS_TERMCAP_se=$'\E[0m' \
+        LESS_TERMCAP_so=$'\E[01;31m\E[47m' \
+        LESS_TERMCAP_ue=$'\E[0m' \
+        LESS_TERMCAP_us=$'\E[38;2;145;193;248m' \
+        man "$@"
 }
 
