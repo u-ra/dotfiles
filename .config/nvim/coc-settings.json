@@ -1,0 +1,12 @@
+{
+	"diagnostic.warningSign": "🤔",
+	"diagnostic.errorSign": "🤬",
+	"clangd.arguments": [
+		"--query-driver",
+		"/repo/evukjur/rcs-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/arm-wrs-linux-gnueabi/arm-wrs-linux-gnueabi-gcc,/repo/evukjur/rcs-sdk/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/aarch64-wrsmllib64-linux/aarch64-wrsmllib64-linux-gcc",
+		"--background-index",
+		"--clang-tidy-checks",
+		"-bugprone-sizeof-expression"
+	]
+
+}

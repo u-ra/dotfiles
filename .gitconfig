@@ -1,0 +1,24 @@
+[user]
+	email = jura@vukad.in
+	name = Jurica Vukadin
+[push]
+	default = simple
+[merge]
+	tool = vimdiff
+[color]
+	ui = auto
+[color "grep"]
+	linenumber = bold green
+[grep]
+	lineNumber = true
+[diff]
+	compactionHeuristic = true
+[pretty]
+	ref = format:%C(auto)%h (\"%s\")
+[url "https://gerrit.ericsson.se/a/"]
+	insteadOf = gerrit:
+[alias]
+        review = !git push origin HEAD:refs/for/$(git rev-parse --symbolic-full-name --abbrev-ref @{u} | cut -d / -f2-)
+	fixup = commit --amend --no-edit
+	buildme = !ssh gerrit gerrit review $(git rev-parse HEAD) -m buildme
+	testme = !ssh gerrit gerrit review $(git rev-parse HEAD) -m testme
